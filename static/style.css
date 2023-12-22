@@ -1,0 +1,17 @@
+/* Style the scrollbar track */
+.overflow-auto::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+
+  /* Style the scrollbar thumb */
+  .overflow-auto::-webkit-scrollbar-thumb {
+    background-color: #525252;
+    border-radius: 4px;
+ /* Color of the scrollbar thumb */
+  }
+
+  /* Style the scrollbar track */
+  .overflow-auto::-webkit-scrollbar-track {
+    background: none;
+  }

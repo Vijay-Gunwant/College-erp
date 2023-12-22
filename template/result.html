@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+
+{%block title%} Result {%endblock%}
+{%block content%}
+<div class="flex pl-5 justify-center h-[80vh] w-[100vw]">
+	<div class="overflow-auto w-[90vw] lg:w-[48vw]">
+		<table class="border-separate border-spacing-2 w-full">
+			<thead>
+				<tr>
+					<th class="bg-[#7F7F7F] p-2 font-semibold rounded-md ">S.no</th>
+					<th class="bg-[#7F7F7F] p-2 font-semibold rounded-md">Sem</th>
+					<th class="bg-[#7F7F7F] p-2 font-semibold rounded-md">Result Type</th>
+					<th class="bg-[#7F7F7F] p-2 font-semibold rounded-md">Backlog</th>
+					<th class="bg-[#7F7F7F] p-2 font-semibold rounded-md whitespace-nowrap">Result</th>
+
+
+				</tr>
+			</thead>
+			<tbody>
+			{% for i in Res%}
+				<tr>
+					<td class="bg-white p-2 font-semibold rounded-md">{{forloop.counter}}</td>
+					<td class="bg-white p-2 font-semibold rounded-md mx-1">{{i.sem}}</td>
+					<td class="bg-white p-2 font-semibold rounded-md mx-1">{{i.type}}</td>
+					<td class="bg-white p-2 font-semibold rounded-md mx-1">{{i.backlog}}</td>
+					<td class="bg-white p-2 font-semibold rounded-md text-blue-500">
+						<a href="{{i.file.url}}" target="_blank">
+							View
+						</a>
+					</td>
+				</tr>
+			{%endfor%}
+			</tbody>
+		</table>
+	</div>
+</div>
+{%endblock%}

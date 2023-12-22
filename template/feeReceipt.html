@@ -1,0 +1,39 @@
+{%extends 'base.html'%}
+
+{%block title%} Fees Receipt {%endblock%}
+{%block content%}
+<div class="flex justify-center pl-5  h-[80vh] w-[100vw]">
+	<div class="overflow-auto w-[90vw] lg:w-[48vw]">
+		<table class="border-separate border-spacing-2 w-full">
+			<thead>
+				<tr>
+					<th class="bg-[#7F7F7F] p-2 font-semibold rounded-md ">S.no</th>
+					<th class="bg-[#7F7F7F] p-2 font-semibold rounded-md">Sem</th>
+					<th class="bg-[#7F7F7F] p-2 font-semibold rounded-md">Date</th>
+					<th class="bg-[#7F7F7F] p-2 font-semibold rounded-md whitespace-nowrap">Fee Amount</th>
+					<th class="bg-[#7F7F7F] p-2 font-semibold rounded-md">Fee Description</th>
+					<th class="bg-[#7F7F7F] p-2 font-semibold rounded-md">Fee Reciept</th>
+
+				</tr>
+			</thead>
+			<tbody>
+			{% for i in receipt%}
+				<tr>
+					<td class="bg-white p-2 font-semibold rounded-md">{{forloop.counter}}</td>
+					<td class="bg-white p-2 font-semibold rounded-md mx-1">{{i.sem}}</td>
+					<td class="bg-white p-2 font-semibold rounded-md mx-1">{{i.date}}</td>
+					<td class="bg-white p-2 font-semibold rounded-md whitespace-nowrap overflow-auto">{{i.amount}}
+					</td>
+					<td class="bg-white p-2 font-semibold rounded-md mx-1">{{i.feeDescription}}</td>
+					<td class="bg-white p-2 font-semibold rounded-md text-blue-500">
+						<a href="{{i.feeReceipt.url}}" target="_blank">
+							View
+						</a>
+					</td>
+				</tr>
+			{%endfor%}
+			</tbody>
+		</table>
+	</div>
+</div>
+{%endblock%}

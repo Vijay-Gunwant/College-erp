@@ -1,0 +1,393 @@
+{% extends 'base.html'%}
+{% load static %}
+{%block title%}Home Page  {%endblock%}
+
+{%block content%}
+    <div
+            class="grid grid-rows-1 sm:grid-rows-2 lg:flex lg:flex-row grid-cols-1 sm:grid-cols-2 place-content-center place-items-center lg:justify-around lg:items-center">
+     <section id="personalInfo" class="sm:flex flex-col justify-center items-center">
+            <div
+                class=" w-[75vw] sm:w-[40vw] lg:w-[20vw] h-[10vh] bg-[#252728] rounded-md flex flex-col justify-center items-center">
+                <p class="text-white text-lg sm:text-xl">
+                    Total Attendance -
+                    <span>
+                        1%
+                    </span>
+                </p>
+            </div>
+            <div
+                class="w-[75vw] sm:w-[40vw] lg:w-[20vw] h-[22vh] bg-[#1F1F1F] rounded-md flex flex-row justify-around items-center my-5 p-1 sm:p-0">
+                <div class="w-[25vw] sm:w-[12vw] lg:w-[8vw] md:w-[8vw] ml-3">
+                        <img src="{{ profileImg.url }}" alt="Profile" class="w-[23vw] sm:w-[12vw] lg:w-[8vw] rounded-full"/>
+                </div>
+                <div
+                    class="w-[50vw] sm:w-[28vw] lg:w-[12vw] text-white font-semibold text-xs sm:text-sm mx-3 whitespace-nowrap overflow-auto">
+                    <p class="my-2">
+                        {{ name }}
+                    </p>
+                    <p class="my-2">
+                        {{ mobileNo }}
+                    </p>
+                    <p class="my-2">
+                        {{email}}
+                    </p>
+
+                </div>
+
+            </div>
+            <div
+                class="w-[70vw] sm:w-[35vw] lg:w-[18vw] bg-[rgb(31,31,31)] text-xs sm:text-xs rounded-md flex flex-col p-2 sm:ml-[-6vw] lg:ml-[-2vw] whitespace-nowrap">
+                <p
+                    class="text-white p-2 w-[65vw] sm:w-[30vw] lg:w-[18vw] font-semibold rounded-md m-2 ml-[8vw] lg:ml-[2vw] bg-[#252728] overflow-auto">
+                    Name:
+                    <span>
+                        {{name}}
+                    </span>
+                </p>
+                <p
+                    class="text-white p-2 w-[65vw] sm:w-[30vw] lg:w-[18vw] font-semibold rounded-md m-2 ml-[8vw] lg:ml-[2vw] bg-[#252728] overflow-auto">
+                    Student Id:
+                    <span>
+                        {{studentId}}
+                    </span>
+                </p>
+                <p
+                    class="text-white p-2 w-[65vw] sm:w-[30vw] lg:w-[18vw] font-semibold rounded-md m-2 ml-[8vw] lg:ml-[2vw] bg-[#252728] overflow-auto">
+                    Roll No.:
+                    <span>
+                        2192114
+                    </span>
+                </p>
+                <p
+                    class="text-white p-2 w-[65vw] sm:w-[30vw] lg:w-[18vw]  font-semibold rounded-md m-2 ml-[8vw] lg:ml-[2vw] bg-[#252728] overflow-auto">
+                    Father:
+                    <span>
+                        {{father}}
+                    </span>
+                </p>
+                <p
+                    class="text-white p-2 w-[65vw] sm:w-[30vw] lg:w-[18vw] font-semibold rounded-md m-2 ml-[8vw] lg:ml-[2vw] bg-[#252728] overflow-auto">
+                    Mother:
+                    <span>
+                        {{mother}}
+                    </span>
+                </p>
+                <p
+                    class="text-white p-2 w-[65vw] sm:w-[30vw] lg:w-[18vw] font-semibold rounded-md m-2 ml-[8vw] lg:ml-[2vw] bg-[#252728] overflow-auto">
+                    DOB:
+                    <span>
+                        {{dob}}
+                    </span>
+                </p>
+                <p
+                    class="text-white p-2 w-[65vw] sm:w-[30vw] lg:w-[18vw] font-semibold rounded-md m-2 ml-[8vw] lg:ml-[2vw] bg-[#252728] overflow-auto">
+                    Blood Group:
+                    <span>
+                        {{bloodGroup}}
+                    </span>
+                </p>
+                <p
+                    class="text-white p-2 w-[65vw] sm:w-[30vw] lg:w-[18vw] font-semibold rounded-md m-2 ml-[8vw] lg:ml-[2vw] bg-[#252728] overflow-auto">
+                    Enrollnment No.:
+                    <span>
+                        PV-21920114
+                    </span>
+                </p>
+                <p
+                    class="text-white p-2 w-[65vw] sm:w-[30vw] lg:w-[18vw] font-semibold rounded-md m-2 ml-[8vw] lg:ml-[2vw] bg-[#252728] overflow-auto">
+                    Year/Sem:
+                    <span>
+                        {{sem}}
+                    </span>
+                </p>
+            </div>
+        </section>
+         <section id="courseInfo"
+            class="hidden lg:w-[50vw]  sm:flex flex-col justify-center items-center my-5  sm:col-span-2 sm:order-2 self-center lg:self-start">
+            <div class=" flex flex-col sm:flex-row justify-center items-center sm:text-sm">
+                <div class="w-[75vw] sm:w-[25vw] lg:w-[15vw] text-white flex flex-col justify-center items-center">
+                    <p
+                        class="w-[75vw] sm:w-[25vw] lg:w-[15vw] h-14 p-4 bg-[#252728] rounded-md flex flex-row justify-center items-center">
+                        Dues/ Paid/ Balance to pay
+                    </p>
+                    <p
+                        class="w-[75vw] sm:w-[25vw] lg:w-[15vw] h-20 p-4 bg-[#1F1F1F] rounded-md flex flex-row justify-center items-center">
+                        <span class="material-symbols-outlined">
+                            currency_rupee
+                        </span>
+                        123456/543556
+                    </p>
+                </div>
+                <div
+                    class="w-[75vw] sm:w-[25vw] lg:w-[15vw] text-white flex flex-col justify-center items-center my-4 sm:my-0 sm:mx-4">
+                    <p
+                        class="w-[75vw] sm:w-[25vw] lg:w-[15vw] h-14 p-4 bg-[#252728] rounded-md flex flex-row justify-center items-center">
+                        Company Visited/Placed Student
+                    </p>
+                    <p
+                        class="w-[75vw] sm:w-[25vw] lg:w-[15vw] h-20 p-4 bg-[#1F1F1F] rounded-md flex flex-row justify-center items-center">
+                        <span class="material-symbols-outlined">
+                            apartment
+                        </span>
+                        0/0
+                    </p>
+                </div>
+                <div class="w-[75vw] sm:w-[25vw] lg:w-[15vw] text-white flex flex-col justify-center items-center">
+                    <p
+                        class="w-[75vw] sm:w-[25vw] lg:w-[15vw] h-14 p-4 bg-[#252728] rounded-md flex flex-row justify-center items-center">
+                        Total CGPA
+                    </p>
+                    <p
+                        class="w-[75vw] sm:w-[25vw] lg:w-[15vw] h-20 p-4 bg-[#1F1F1F] rounded-md flex flex-row justify-center items-center">
+                        <span class="material-symbols-outlined">
+                            analytics
+                        </span>
+                        9.3
+                    </p>
+                </div>
+            </div>
+            <div
+                class="w-[75vw] lg:w-[43vw] h-[30vh] sm:h-[10vh] bg-[#1F1F1F] my-8 lg:my-12 sm:mr-[-3vw] rounded-md flex flex-col sm:flex-row justify-center items-center sm:text-sm">
+                <p
+                    class="text-white p-3 w-[65vw] sm:w-[25vw]  bg-[#252728] rounded-md mt-[-8vw] sm:mt-0 whitespace-nowrap sm:ml-[-5vw]">
+                    Program And
+                    Education</p>
+                <p class="text-white p-3 w-[75vw] sm:w-[20vw] text-center">Family And Address</p>
+                <p class="text-white p-3 w-[75vw] sm:w-[20vw] text-center ">Facility And Reward</p>
+                <p class="text-white p-3 w-[75vw] sm:w-[20vw] text-center ">Mentor and Minor GE Details
+                </p>
+            </div>
+            <div
+                class="w-[75vw]  lg:w-[47vw] bg-[#1F1F1F] flex flex-col justify-center items-center rounded-md py-3 mb-5 lg:mb-8">
+                <p
+                    class="text-white bg-[#252728] w-[65vw] sm:w-[30vw] h-[8vh] lg:h-[7vh] flex flex-row justify-center items-center rounded-md mb-3 mt-[-4vh]">
+                    <span class="material-icons">
+                        school
+                    </span>
+                    Program Information
+                </p>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-3 grid-rows-{8} sm:grid-rows-3 items-center justify-center text-sm sm:gap-1 lg:gap-2">
+                    <div
+                        class="w-[75vw] sm:w-[20vw] lg:w-[12vw]  text-white flex flex-row justify-center items-center my-2">
+                        <p class="w-[25vw] sm:w-[10vw] lg:w-[6vw] whitespace-nowrap  text-left">
+                            Student Type:
+                        </p>
+                        <p
+                            class="text-gray-400 mx-2 w-[40vw] sm:w-[10vw] lg:w-[6vw]   whitespace-nowrap   overflow-auto text-left">
+                            {{studentType}}
+                        </p>
+                    </div>
+                    <div
+                        class="w-[75vw] sm:w-[20vw] lg:w-[12vw]  text-white flex flex-row justify-center items-center my-2 ">
+                        <p class="w-[25vw] sm:w-[10vw] lg:w-[6vw] whitespace-nowrap   text-left">
+                            University:
+                        </p>
+                        <p
+                            class="text-gray-400 mx-2 whitespace-nowrap   w-[40vw] sm:w-[10vw] lg:w-[6vw] overflow-auto text-left">
+                            {{university}}
+                        </p>
+                    </div>
+                    <div
+                        class="w-[75vw] sm:w-[20vw] lg:w-[12vw]  text-white flex flex-row justify-center items-center my-2">
+                        <p class="w-[25vw] sm:w-[10vw] lg:w-[6vw] whitespace-nowrap  text-left">
+                            Current Sem:
+                        </p>
+                        <p
+                            class="text-gray-400  mx-2 whitespace-nowrap  w-[40vw] sm:w-[10vw] lg:w-[6vw] overflow-auto text-left">
+                            {{sem}}
+                        </p>
+                    </div>
+
+                    <div
+                        class="w-[75vw] sm:w-[20vw] lg:w-[12vw]  text-white flex flex-row justify-center items-center my-2 ">
+                        <p class="w-[25vw] sm:w-[10vw]  lg:w-[6vw] whitespace-nowrap  text-left">
+                            Course Type:
+                        </p>
+                        <p
+                            class="text-gray-400 mx-2 whitespace-nowrap  w-[40vw] sm:w-[10vw] lg:w-[6vw] overflow-auto text-left ">
+                            {{courseType}}
+                        </p>
+                    </div>
+
+                    <div
+                        class="w-[75vw] sm:w-[20vw] lg:w-[12vw] text-white flex flex-row justify-center items-center my-2">
+                        <p class="w-[25vw] sm:w-[10vw] lg:w-[6vw] whitespace-nowrap  text-left">
+                            Course:
+                        </p>
+                        <p
+                            class="text-gray-400  mx-2 whitespace-nowrap  w-[40vw] sm:w-[10vw] lg:w-[6vw] overflow-auto text-left">
+                            {{course}}
+                        </p>
+                    </div>
+                    <div
+                        class="w-[75vw] sm:w-[20vw] lg:w-[12vw]  text-white flex flex-row justify-center items-center my-2 ">
+                        <p class="w-[25vw] sm:w-[10vw] lg:w-[6vw] whitespace-nowrap  text-left">
+                            College:
+                        </p>
+                        <p
+                            class="text-gray-400  mx-2 whitespace-nowrap  w-[40vw] sm:w-[10vw] lg:w-[6vw] overflow-auto text-left">
+                            {{college}}
+                        </p>
+                    </div>
+                    <div
+                        class="w-[75vw] sm:w-[20vw] lg:w-[12vw] text-white flex flex-row justify-center items-center my-2">
+                        <p class="w-[25vw] sm:w-[10vw] lg:w-[6vw] whitespace-nowrap  text-left">
+                            Branch:
+                        </p>
+                        <p
+                            class="text-gray-400  mx-2 whitespace-nowrap  w-[40vw] sm:w-[10vw] lg:w-[6vw] overflow-auto text-left">
+                            {{branch}}
+                        </p>
+                    </div>
+                    <div
+                        class="w-[75vw] sm:w-[20vw] lg:w-[12vw] text-white flex flex-row justify-center items-center my-2">
+                        <p class="w-[25vw] sm:w-[10vw] lg:w-[6vw] whitespace-nowrap  text-left">
+                            Section:
+                        </p>
+                        <p
+                            class="text-gray-400  mx-2 whitespace-nowrap  w-[40vw] sm:w-[10vw] lg:w-[6vw] overflow-auto text-left">
+                            {{section}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[75vw] lg:w-[47vw] bg-[#1F1F1F] text-white p-4 rounded-md">
+                <p class="flex flex-row justify-center items-center sm:justify-start">
+                    <span class="material-icons">
+                        local_library
+                    </span>
+                    Education
+                </p>
+            </div>
+            <div
+                class="w-[75vw] lg:w-[47vw] mt-5 h-fit bg-[#1F1F1F] flex flex-col sm:flex-row justify-between items-center rounded-md p-2">
+               <a href="{{marksheet10.url}}" target="_blank" title="Click to view mark sheet">
+                <p
+                    class="w-[60vw] sm:w-[20vw] lg:w-[12vw] text-white border-2 border-white p-2 my-2 rounded-md text-center" >
+                    HighSchool % : <span>
+                        {{percent10}}
+                    </span>
+                </p>
+               </a>
+                <a href="{{marksheet12.url}}" target="_blank" title="Click to view mark sheet">
+                <p
+                    class="w-[60vw] sm:w-[20vw] lg:w-[12vw] text-white border-2 border-white p-2 my-2 rounded-md text-center">
+                    Intermediate %: <span>
+                       {{percent12}}
+                    </span>
+                </p>
+                    </a>
+                <p
+                    class="w-[60vw] sm:w-[20vw] lg:w-[12vw] text-white border-2 border-white p-2 my-2 rounded-md text-center">
+                    Graduation : N/A
+                </p>
+            </div>
+        </section>
+             <section id = "syllabusInfo" class=" hidden lg:w-[20vw] sm:flex flex-col justify-center items-center lg:order-3 self-start">
+            <p class="text-white sm:mb-2">
+                Services <span class="text-red-500">
+                    See more
+                </span>
+            </p>
+            <div
+                class="bg-[#1f1f1f] flex flex-col justify-center items-center p-3 text-white  w-[75vw] sm:w-[40vw] lg:w-[20vw] rounded-md  my-2">
+                <p class="text-red-700 p-2 mt-[-3vw] sm:mt-[-1vw]">
+                    Syllabus
+                </p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 grid-rows-3 sm:grid-rows-2 gap-2 mt-3">
+                    {% for i in subjectInfo%}
+                        <a href="{{i.syllabus.url}}" target="_blank" title="Click to Download Syllabus">
+                            <p class="border-2 p-3 sm:p-1 rounded-md m-2 overflow-auto bg-[#7F7F7F] " >{{i.subjectName}}</p>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+
+                 <a href="{{timetable.url}}" target="_blank" title="Click to view TimeTable">
+                    <div class="bg-[#1f1f1f] p-4 flex flex-row  items-center rounded-md w-[75vw] sm:w-[40vw] lg:w-[20vw]">
+
+                        <span class="material-icons text-[#c8f2fd] text-4xl">
+                            date_range
+                        </span>
+
+                        <p class="text-yellow-400 text-xl px-1">
+                            Timetable
+                        </p>
+
+                    </div>
+                 </a>
+            <div
+                class="bg-[#1f1f1f] flex flex-col justify-center items-center p-3 text-white  w-[75vw] sm:w-[40vw] lg:w-[20vw] rounded-md  my-2">
+                <p class="text-yellow-400 p-2 rounded-md mt-[-3vw] sm:mt-[-1vw]">
+                    Yours Faculty
+                </p>
+                <div class="flex flex-row justify-between items-center gap-2 mt-3 overflow-auto">
+                     {% for i in subjectInfo%}
+                        <img src="{{i.teacherImg.url}}" alt="{{i.teacherName}}" title="{{i.teacherName}}"  class="w-[15vw] sm:w-[3vw] m-2"/>
+                    {% endfor %}
+                </div>
+            </div>
+            <div
+                class="bg-[#1f1f1f] flex flex-col justify-center items-center p-3 text-white  w-[75vw] sm:w-[40vw] lg:w-[20vw] rounded-md  my-2">
+                <p class="bg-[#252728] p-2 rounded-md mt-[-3vw] sm:mt-[-1vw]">
+                    Attendance Graph
+                </p>
+                <div class="mt-3">
+                        <img src="{% static 'demo.png' %}" alt="Graph" class="w-[80vw] sm:w-[25vw]"/>
+                </div>
+            </div>
+        </section>
+
+            <span class="material-icons text-white sm:hidden absolute left-2 top-[50vh]" onClick="setL()">
+                chevron_left
+            </span>
+            <span class="material-icons text-white sm:hidden absolute right-2 top-[50vh]" onClick="setR()">
+                chevron_right
+            </span>
+        </div>
+
+    {% endblock%}
+
+{%block js%}
+ function setR(){
+        if (x ===1 ){
+            document.getElementById("personalInfo").style.display = "none"
+            document.getElementById("courseInfo").style.display = "flex"
+            document.getElementById("syllabusInfo").style.display = "none"
+            x++;
+        }
+        else if(x===2){
+            document.getElementById("personalInfo").style.display = "none"
+            document.getElementById("courseInfo").style.display = "none"
+            document.getElementById("syllabusInfo").style.display = "flex"
+            x++;
+        }
+        else{
+            document.getElementById("personalInfo").style.display = "flex"
+            document.getElementById("courseInfo").style.display = "none"
+            document.getElementById("syllabusInfo").style.display = "none"
+            x=1;
+        }
+    }
+    function setL(){
+        if (x ===1 ){
+            document.getElementById("personalInfo").style.display = "none"
+            document.getElementById("courseInfo").style.display = "none"
+            document.getElementById("syllabusInfo").style.display = "flex"
+            x=3;
+        }
+        else if(x===2){
+            document.getElementById("personalInfo").style.display = "flex"
+            document.getElementById("courseInfo").style.display = "none"
+            document.getElementById("syllabusInfo").style.display = "none"
+            x--;
+        }
+        else{
+            document.getElementById("personalInfo").style.display = "none"
+            document.getElementById("courseInfo").style.display = "flex"
+            document.getElementById("syllabusInfo").style.display = "none"
+            x--;
+        }
+    }
+{%endblock%}

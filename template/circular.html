@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+
+{%block title%} Circular {%endblock%}
+
+{%block content%}
+
+{% if temp %}
+{% for i in temp%}
+<div class="max-w-3xl w-[80vw] sm:w-auto mx-auto">
+		<div class="bg-gray-800 rounded-lg p-6 mb-8">
+			<h2 class="text-2xl text-white font-semibold mb-4">{{i.title}}</h2>
+			<p class="text-gray-400 mb-2">Description: {{i.description}}</p>
+			<p class="text-gray-400 mb-2">Date: {{i.date}}</p>
+			<p class="text-gray-400 mb-2">Issued By: {{i.issuedBy}}</p>
+			<a href="{{i.file.url}}" class="text-blue-500 hover:text-blue-700 underline" target="_blank">Download Circular</a>
+		</div>
+</div>
+{%endfor%}
+{%else%}
+<div class="flex justify-center items-center h-screen bg-gray-800 rounded-lg p-6 mb-8">
+    <div class="text-center">
+        <p class="text-xl font-semibold mb-4 text-white">No data available</p>
+        <p class="text-gray-400">We're sorry, but there is no data available at the moment.</p>
+        <p class="text-gray-400">Please check back later or try a different search.</p>
+    </div>
+</div>
+
+{%endif%}
+{%endblock%}

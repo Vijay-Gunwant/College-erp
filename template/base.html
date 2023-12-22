@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%}{%endblock%}</title>
+
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Style the scrollbar track */
+.overflow-auto::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+
+  /* Style the scrollbar thumb */
+  .overflow-auto::-webkit-scrollbar-thumb {
+    background-color: #525252;
+    border-radius: 4px;
+ /* Color of the scrollbar thumb */
+  }
+
+  /* Style the scrollbar track */
+  .overflow-auto::-webkit-scrollbar-track {
+    background: none;
+  }
+    @media only screen and (min-width: 450px) {
+        #personalInfo, #courseInfo , #syllabusInfo{
+            display:flex !important;
+        }
+    }
+    {%block styles%}{%endblock%}
+    </style>
+</head>
+
+<body class="bg-black">
+    <nav class=" h-[5rem] sm:h-[6rem] flex flex-row justify-between p-5">
+        <div id="Logo" class="flex flex-row items-center">
+            <span id="menu"
+                class="material-icons text-sm sm:text-4xl text-[#c8f2fd] cursor-default  hover:text-[#7fcde0] mr-2 "
+                onclick="showSide()">
+                menu
+            </span>
+            <span id="close"
+                class="material-icons text-sm sm:text-4xl text-[#c8f2fd] cursor-default  hover:text-[#7fcde0] mr-2 hidden"
+                onclick="hideSide()">
+                close
+            </span>
+            <p class="text-white text-[0.5rem] sm:text-xl font-extrabold">
+                Hello, <span>
+                    {{fname}}
+                </span>
+            </p>
+        </div>
+        <div id="SearchBox" class="flex flex-row justify-evenly items-center">
+            <a href="/home">
+                <span class="material-icons text-sm sm:text-4xl text-[#c8f2fd] cursor-default  hover:text-[#7fcde0]">
+                    home
+                </span>
+            </a>
+            <input type="search" name="Search" id="Search" placeholder="Search"
+                class="rounded-md border-1 border-gray-200 bg-[#4C4747] text-white text-sm w-20 sm:w-36 h-2 sm:h-7 p-3 mx-2 outline-none" />
+            <a href="/">
+                <span
+                    class="material-icons text-sm sm:text-4xl text-[#c8f2fd] cursor-default  hover:text-[#7fcde0] mr-1"
+                    tooltip="Logout">
+                    logout
+                </span>
+            </a>
+        </div>
+    </nav>
+    <section id="sidebar"
+        class="absolute left-0 z-10 top-[4rem] sm:top-[5rem]  w-[80vw] bg-black sm:w-[15vw] flex flex-col justify-around items-center opacity-80 hidden">
+        <div id="Menu_bar" class="flex flex-col items-center text-center">
+            <div class="flex flex-col m-1 border-b-[1px] border-[#dedcdc] w-[75vw] sm:w-[15vw] border-t-[1px]">
+                <a href="academics">
+                    <span
+                        class="material-icons text-2xl text-[#c8f2fd] justify-center items-center cursor-default  hover:text-[#7fcde0]">
+                        school
+                    </span>
+                    <p class="text-white text-sm">
+                        Academics
+                    </p>
+                </a>
+            </div>
+            <div class="flex flex-col m-1 border-b-[1px] border-[#dedcdc] w-[75vw] sm:w-[15vw]">
+                <a href="fees">
+                    <span
+                        class="material-icons text-2xl text-[#c8f2fd] justify-center items-center cursor-default  hover:text-[#7fcde0]">
+                        currency_rupee
+                    </span>
+                    <p class="text-white text-sm">
+                        Fees
+                    </p>
+                </a>
+            </div>
+            <div class="flex flex-col m-1 border-b-[1px] border-[#dedcdc] w-[75vw] sm:w-[15vw]">
+                <a href="circular">
+                    <span
+                        class="material-icons text-2xl text-[#c8f2fd] justify-center items-center cursor-default  hover:text-[#7fcde0]">
+                        campaign
+                    </span>
+                    <p class="text-white text-sm">
+                        Circular
+                    </p>
+                </a>
+            </div>
+            <div class="flex flex-col m-1 border-b-[1px] border-[#dedcdc] w-[75vw] sm:w-[15vw]">
+                <a href="notification">
+                    <span
+                        class="material-icons text-2xl text-[#c8f2fd] justify-center items-center cursor-default  hover:text-[#7fcde0]">
+                        notifications
+                    </span>
+                    <p class="text-white text-sm">
+                        Notifiactions
+                    </p>
+                </a>
+            </div>
+            <div class="flex flex-col m-1 border-b-[1px] border-[#dedcdc] w-[75vw] sm:w-[15vw]">
+                <a href="temp">
+                    <span
+                        class="material-icons text-2xl text-[#c8f2fd] justify-center items-center cursor-default  hover:text-[#7fcde0]">
+                        library_books
+                    </span>
+                    <p class="text-white text-sm">
+                        Library
+                    </p>
+                </a>
+            </div>
+            <div class="flex flex-col m-1 border-b-[1px] border-[#dedcdc] w-[75vw] sm:w-[15vw]">
+                <a href="exam">
+                    <span
+                        class="material-icons text-2xl text-[#c8f2fd] justify-center items-center cursor-default  hover:text-[#7fcde0]">
+                        text_snippet
+                    </span>
+                    <p class="text-white text-sm">
+                        Exams
+                    </p>
+                </a>
+            </div>
+            <div class="flex flex-col m-1 border-b-[1px] border-[#dedcdc] w-[75vw] sm:w-[15vw]">
+                <a href="temp">
+                    <span
+                        class="material-icons text-2xl text-[#c8f2fd] justify-center items-center cursor-default  hover:text-[#7fcde0]">
+                        groups
+                    </span>
+                    <p class="text-white text-sm">
+                        Placement
+                    </p>
+                </a>
+            </div>
+            <div class="flex flex-col m-1 border-b-[1px] border-[#dedcdc] w-[75vw] sm:w-[15vw]">
+                <a href="events">
+                    <span
+                        class="material-icons text-2xl text-[#c8f2fd] justify-center items-center cursor-default  hover:text-[#7fcde0]">
+                        emoji_events
+                    </span>
+                    <p class="text-white text-sm">
+                        Events
+                    </p>
+                </a>
+            </div>
+            <div class="flex flex-col m-1 border-b-[1px] border-[#dedcdc] w-[75vw] sm:w-[15vw]">
+                <a href="temp">
+                    <span
+                        class="material-icons text-2xl text-[#c8f2fd] justify-center items-center cursor-default  hover:text-[#7fcde0]">
+                        gite
+                    </span>
+                    <p class="text-white text-sm">
+                        Hostel
+                    </p>
+                </a>
+            </div>
+            <div class="flex flex-col m-1 border-b-[1px] border-[#dedcdc] w-[75vw] sm:w-[15vw]">
+                <a href="temp">
+                    <span
+                        class="material-icons text-2xl text-[#c8f2fd] justify-center items-center cursor-default  hover:text-[#7fcde0]">
+                        forum
+                    </span>
+                    <p class="text-white text-sm">
+                        Greiveinces
+                    </p>
+                </a>
+            </div>
+        </div>
+        <a href="home">
+            <div id="Profile"
+                class="w-[6rem] sm:w-[7.5rem] cursor-default mx-[0.5px] my-1 h-9 bg-[#4C4747] rounded-md flex flex-row items-center hover:scale-75">
+                <img src="{{profileImg.url}}" alt="profile" class=" w-[8vw] md:w-[5vw] lg:w-[2vw] p-1">
+                <p class="text-white">
+                    {{fname}}
+                </p>
+            </div>
+        </a>
+    </section>
+    {%block content%}
+    {% endblock %}
+
+
+</body>
+<script>
+    var x = 1
+    function showSide() {
+        document.getElementById("menu").style.display = "none"
+        document.getElementById("close").style.display = "inline-block"
+        document.getElementById("sidebar").style.display = "flex"
+
+    }
+    function hideSide() {
+        document.getElementById("menu").style.display = "inline-block"
+        document.getElementById("close").style.display = "none"
+        document.getElementById("sidebar").style.display = "none"
+
+    }
+   {%block js%}
+   {%endblock%}
+</script>
+
+
+</html>

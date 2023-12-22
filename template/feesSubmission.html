@@ -1,0 +1,174 @@
+{%extends 'base.html'%}
+{%block title%}Fee Details {%endblock%}
+{%block content%}
+        <section class="m-1 flex flex-col lg:flex-row justify-center items-start">
+            <div class=" m-3 lg:w-[50vw] lg:border-b-0 border-b-4 border-gray-500">
+                <p class=" text-red-500 text-lg p-1">
+                    FEE TYPE
+                    <select name="" id="" class="rounded-md text-black">
+                        <option value="CourseFee">Course Fee</option>
+                        <option value="Hostle Fee">Hostel Fee</option>
+                    </select>
+                </p>
+                <p
+                    class="text-[#C8EDFD] text-2xl flex flex-row  justify-center items-center bg-[#1F1F1F] p-2 rounded-md w-[90vw] lg:w-[48vw] ml-1">
+                    Academic Fee Detail in ₹
+                </p>
+                <div class="overflow-auto w-[90vw] lg:w-[48vw]">
+                    <table class="border-separate border-spacing-2">
+                        <thead>
+                        <tr>
+                            <th class="bg-[#7F7F7F] p-2 font-semibold rounded-md ">S.no</th>
+                            <th class="bg-[#7F7F7F] p-2 font-semibold rounded-md">Sem</th>
+                            <th class="bg-[#7F7F7F] p-2 font-semibold rounded-md whitespace-nowrap">Fee Description</th>
+                            <th class="bg-[#7F7F7F] p-2 font-semibold rounded-md">Dues</th>
+                            <th class="bg-[#7F7F7F] p-2 font-semibold rounded-md">Scholarship</th>
+                            <th class="bg-[#7F7F7F] p-2 font-semibold rounded-md">Paid</th>
+                            <th class="bg-[#7F7F7F] p-2 font-semibold rounded-md">Balance</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in feeDetails%}
+                        <tr>
+                            <td class="bg-white p-2 font-semibold rounded-md">{{forloop.counter}}</td>
+                            <td class="bg-white p-2 font-semibold rounded-md mx-1">{{i.sem}}</td>
+                            <td class="bg-white p-2 font-semibold rounded-md whitespace-nowrap overflow-auto">{{i.feeName}}
+                            </td>
+                            <td class="bg-white p-2 font-semibold rounded-md mx-1">{{i.dues}}</td>
+                            <td class="bg-white p-2 font-semibold rounded-md">{{i.scholarship}}</td>
+                            <td class="bg-white p-2 font-semibold rounded-md mx-1">{{i.paid}}</td>
+                            <td class="bg-white p-2 font-semibold rounded-md">{{i.balance}}</td>
+                        </tr>
+                        {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class=" w-[95vw] m-3 lg:w-[50vw] flex flex-col lg:border-l-4 lg:border-gray-500 justify-center items-center">
+                <div class="flex flex-col justify-center items-center">
+                    <p class="bg-[#1F1F1F] p-2 text-white rounded-md mb-2 w-[50vw] lg:w-[30vw]">Student Information</p>
+                    <div class="bg-white w-[90vw] lg:w-[45vw] rounded-md">
+                        <div class="flex flex-row border-gray-400 p-1 border-b-2">
+                            <p class="text-red-500 w-[45vw] lg:w-[20vw]">
+                                Student name:
+
+                            </p>
+                            <p class="w-[45vw] lg:w-[20vw]">
+                                {{name}}
+                            </p>
+                        </div>
+                        <div class="flex flex-row border-gray-400 p-1 border-b-2">
+                            <p class="text-red-500 w-[45vw] lg:w-[20vw]">
+                                Admission No:
+
+                            </p>
+                            <p class="w-[45vw] lg:w-[20vw]">
+                                {{studentId}}
+                            </p>
+                        </div>
+                        <div class="flex flex-row border-gray-400 p-1 border-b-2">
+                            <p class="text-red-500 w-[45vw] lg:w-[20vw]">
+                                Course:
+
+                            </p>
+                            <p class="w-[45vw] lg:w-[20vw]">
+                                {{course}}
+                            </p>
+                        </div>
+                        <div class="flex flex-row p-1">
+                            <p class="text-red-500 w-[45vw] lg:w-[20vw]">
+                                Sem:
+
+                            </p>
+                            <p class="w-[45vw] lg:w-[20vw]">
+                                {{sem}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center items-center my-1">
+                    <p class="bg-[#1F1F1F] p-2 text-white rounded-md mb-2 w-[50vw] lg:w-[30vw]">Fee Details</p>
+                    <div class="bg-white w-[90vw] lg:w-[45vw] rounded-md">
+                        <div class="flex flex-row border-gray-400 p-1 border-b-2">
+                            <p class="text-[#2F82B6] w-[45vw] lg:w-[25vw] lg:text-xs">
+                                Total Due:
+                            </p>
+                            <p class="w-[45vw] lg:w-[15vw]">
+                                {{dues}}
+                            </p>
+                        </div>
+                        <div class="flex flex-row border-gray-400 p-1 border-b-2">
+                            <p class="text-[#2F82B6] w-[45vw] lg:w-[25vw] lg:text-xs">
+                                ScholarShip:
+                            </p>
+                            <p class="w-[45vw] lg:w-[15vw]">
+                                {{scholarship}}
+                            </p>
+                        </div>
+                        <div class="flex flex-row border-gray-400 p-1 border-b-2">
+                            <p class="text-[#2F82B6] w-[45vw] lg:w-[25vw] lg:text-xs">
+                                Paid Amount( with Security Adjusted( 3000.00)):
+                            </p>
+                            <p class="w-[45vw] lg:w-[15vw]">
+                                {{paid}}
+                            </p>
+                        </div>
+                        <div class="flex flex-row border-gray-400 p-1 border-b-2">
+                            <p class="text-[#2F82B6] w-[45vw] lg:w-[25vw] lg:text-xs">
+                                Fee frequency:
+                            </p>
+                            <p class="w-[45vw] lg:w-[15vw]">
+                                {{feeFreq}}
+                            </p>
+                        </div>
+                        <div class="flex flex-row p-1">
+                            <p class="text-red-500 w-[45vw] lg:w-[25vw] text-right">
+                                Balance Amount:
+                            </p>
+                            <p class="w-[45vw] lg:w-[15vw]">
+                                {{balance}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 w-[90vw] lg:w-[45vw]">
+                    <form class="flex flex-col justify-center items-center " action="temp">
+                        <div class="flex self-stretch flex-row justify-between items-center m-2">
+                            <label class="text-red-400 w-[40vw] sm:w-auto">
+                                Amount to Pay(Academic)
+                            </label>
+                            <input type="text" name="Amount" value="{{balance}}" disabled
+                                   class="bg-white text-gray-600 p-1 rounded-md w-[40vw]  sm:w-[15vw]" />
+                        </div>
+                        <div class="flex self-stretch flex-row justify-between items-center m-2">
+                            <label class="text-red-400 w-[40vw] sm:w-[auto]">
+                                Total Amount to Pay
+                            </label>
+                            <input type="text" name="Amount" value="{{balance}}" disabled
+                                   class="bg-white text-gray-600 p-1 rounded-md w-[40vw] sm:w-[15vw]" />
+                        </div>
+                        <div class="flex self-stretch flex-row justify-between items-center m-2">
+                            <label class="text-red-400 w-[40vw] sm:w-[auto] ">
+                                Payment Date
+                            </label>
+                            <input type="date" name="date" value="{{date}}" disabled
+                                   class="bg-white text-gray-600 p-1 rounded-md w-[40vw] sm:w-[15vw]" />
+                        </div>
+                        <div class="flex self-stretch flex-row justify-between items-center m-2">
+                            <label class="text-red-400 w-[40vw] sm:w-auto">
+                                GateWay
+                            </label>
+                             <select name="mode" id="mode" class="rounded-md text-black w-[40vw] sm:w-[15vw] p-1" >
+                                <option value="CourseFee">Option1</option>
+                                <option value="Hostle Fee">Option2</option>
+                            </select>
+                        </div>
+
+                            
+<!--                        <ReCAPTCHA sitekey={"6LcJZ_QoAAAAAOZfyBA7jIltNnQJLy-DsO4GjvZz"} size={"normal"}></ReCAPTCHA>-->
+                        <input type="submit" value="Proceed" class="bg-[#C44D43] text-white p-2 rounded-md mt-2 cursor-pointer" />
+                    </form>
+                </div>
+            </div>
+        </section>
+{%endblock%}

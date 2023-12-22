@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <style>
+        .register{
+         background-image:url("{% static 'bg.jpg' %}");
+        }
+    </style>
+</head>
+<body>
+  <div id="Forgot"
+             class="register w-[100vw] h-[100vh] bg-no-repeat bg-cover bg-center flex flex-col justify-center items-center">
+            <div
+                class="w-[80vw] sm:w-[40vw] lg:w-[25vw] h-[40vh]  sm:h-[45vh] lg:h-[38vh] p-2 bg-white opacity-80 flex flex-col justify-evenly items-center shadow-[0_0_100px_0px_rgba(0,0,0,0.8)]">
+                <p
+                    class="bg-gradient-to-r from-[#FA4B37] to-[#403dee] text-white font-bold text-sm text-center  rounded-full p-2 shadow-[0px_0px_20px_9px_rgba(0,0,0,0.3)]">
+
+                    Forgot Password?
+                </p>
+                <form class="w-[60vw] sm:w-[30vw] flex flex-col justify-center items-center" action="/forgot" method="post">
+                   {% csrf_token %}
+                    <div class="flex flex-row justify-center items-center">
+                        <label class="material-icons" for="StudentId" >
+                            person
+                        </label>
+                        <input type="number" id="StudentId" name = "StudentId" placeholder="EnterStudentId" class="w-[50vw] sm:w-[25vw] lg:w-[10vw] m-2 border-b-2 border-gray-500 text-sm p-1 text-gray-700" required />
+                    </div>
+                    <div class="flex flex-row justify-center items-center">
+                        <label class="material-icons" for="Email">
+                            email
+                        </label>
+                        <input type="email" id="Email" name="Email" placeholder="EnterEmail(personal)" class=" w-[50vw] sm:w-[25vw] lg:w-[10vw] m-2 border-b-2 border-gray-500 text-sm p-1 text-gray-700 focus:outline-gray-500" required />
+                    </div>
+                    <input type="submit" class="w-[20vw]  sm:w-[16vw] lg:w-[6vw] text-sm border-2 p-2 rounded-md bg-[#1159b9] text-white font-bold cursor-pointer"/>
+                </form>
+                <p class="text-red-800 text-sm cursor-pointer">
+                    <a href='/'>
+                    Log In? Click Here
+                    </a>
+                </p>
+                <div class="h-[5vh] bg-red-600 flex flex-row justify-center p-2 items-center w-full opacity-100">
+                    <p class="text-white p-0 m-0">
+                        {{message}}
+                    </p>
+
+                </div>
+            </div>
+        </div>
+</body>
+</html>
